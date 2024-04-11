@@ -80,7 +80,7 @@ section {
     display: flex; /* Display setting for flex layout */
     align-items: center; /* Align items in the center */
     padding: 0 9%; /* Padding values for the home class */
-    background: url("/images/home.jpg") no-repeat center;
+    background: URL("./images/home.jpg") no-repeat center;
 }
 
 .home-content {
