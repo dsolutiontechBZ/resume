@@ -1,5 +1,7 @@
+/* Importing Google Font - Poppins with various font weights */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+/* Global CSS Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,5 +10,236 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Setting default font to Poppins */
+}
+/* CSS Variables for Colors */
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+/* General styling for HTML and Body */
+html {
+    font-size: 62.5%; /* Setting base font size to 10px for easier rem units */
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color); /* Setting background color */
+    color: var(--text-color); /* Setting text color */
+}
+/* Header Styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+/* Logo Styling */
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-left: 3.5rem;
+    transition: .3s; /* Adding transition effect */
+}
+/* Navigation Link Styling */
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s; /* Adding transition effect */
+}
+/* Hover and Active State for Navigation Links */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color); /* Changing text color on hover and active states */
+}
+/* Menu Icon Styling */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /* Hiding the menu icon */
+}
+/* Styling for the 'section' element */
+section {
+    min-height: 100vh; /* Minimum height of the section */
+    padding: 10rem 9% 2rem; /* Padding values (top, right, bottom, left) */
+}
+/* Styling for the 'home' class */
+.home {
+    display: flex; /* Display setting for flex layout */
+    align-items: center; /* Align items in the center */
+    padding: 0 9%; /* Padding values for the home class */
+    background: url("/images/home.jpg") no-repeat center;
+}
+
+.home-content {
+    max-width: 60rem; /* Maximum width for the home content */
+}
+
+.home-content h1 {
+    font-size: 5.6rem; /* Font size for heading 1 in the home content */
+    font-weight: 700; /* Font weight for heading 1 */
+    line-height: 1.3; /* Line height for heading 1 */
+}
+
+.home-content .text-animate {
+    position: relative; /* Positioning setting */
+    width: 32.8rem; /* Width of the text-animate element */
+}
+
+.home-content .text-animate h3 {
+    font-size: 3.2rem; /* Font size for heading 3 */
+    font-weight: 700; /* Font weight for heading 3 */
+    color: transparent; /* Text color set to transparent */
+    -webkit-text-stroke: 1px var(--main-color); /* Adding text stroke with main color */
+}
+
+.home-content p {
+    font-size: 1.6rem; /* Font size for paragraphs in home content */
+    margin: 2rem 0 4rem; /* Margin settings (top, right, bottom) */
+}
+/* Styling for the 'btn-box' class */
+.btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+}
+/* Styling for buttons inside the .btn-box class */
+.btn-box .btn {
+    /* Set the position to relative to establish a positioning context */
+    position: relative;
+    /* Display as inline-flex to align items horizontally */
+    display: inline-flex;
+    /* Center the content horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    /* Set the width and height of the button */
+    width: 15rem;
+    height: 100%;
+    /* Set the background color using a custom variable */
+    background: var(--main-color);
+    /* Add a border with specific styling */
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    /* Specify the font size, weight, and letter spacing */
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    /* Set the text color using a custom variable */
+    color: var(--bg-color);
+    /* Establish a stacking context with a specified z-index */
+    z-index: 1;
+    /* Hide any overflowing content */
+    overflow: hidden;
+    /* Add a transition effect with a duration of 0.5s */
+    transition: .5s;
+}
+/* Styling for button hover effect */
+.btn-box .btn:hover {
+    color: var(--main-color); /* Change text color on hover */
+}
+/* Styling for the second button in the button box */
+.btn-box .btn:nth-child(2) {
+    background: transparent; /* Set background to transparent */
+    color: var(--main-color); /* Change text color */
+}
+/* Styling for second button hover effect */
+.btn-box .btn:nth-child(2):hover {
+    color: var(--bg-color); /* Change text color on hover */
+}
+/* Styling for the pseudo-element before the second button */
+.btn-box .btn:nth-child(2)::before {
+    background: var(--main-color); /* Set background color */
+}
+/* Styling for the pseudo-element before the buttons */
+.btn-box .btn::before {
+    content: ''; /* Empty content */
+    position: absolute; /* Position absolutely within the button */
+    top: 0; /* Position from the top */
+    left: 0; /* Position from the left */
+    width: 0; /* Initial width */
+    height: 100%; /* Full height */
+    background: var(--bg-color); /* Background color */
+    z-index: -1; /* Move behind the button */
+    transition: .5s; /* Transition effect */
+}
+/* Styling for the hover effect on the pseudo-element before the button */
+.btn-box .btn:hover::before {
+    width: 100%; /* Expand width on hover */
+
+}
+/* Styles for social icons section */
+.home-sci {
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+
+}
+/* Styling for social media icons within the home-sci section */
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+/* Styling for hover effect on social media icons */
+.home-sci a:hover {
+    color: var(--bg-color); /* Change text color on hover */
+}
+/* Styling for the pseudo-element before social media icons */
+.home-sci a::before {
+    content: ''; /* Empty content */
+    position: absolute; /* Position absolutely */
+    top: 0; /* Position from the top */
+    left: 0; /* Position from the left */
+    width: 0; /* Initial width */
+    height: 100%; /* Full height */
+    background: var(--main-color); /* Background color */
+    z-index: -1; /* Move behind the social media icon */
+    transition: .5s; /* Transition effect */
+}
+/* Styling for the hover effect on the pseudo-element before the social media icons */
+.home-sci a:hover::before {
+    width: 100%; /* Expand width on hover */
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+}
+
+.home-imgHover:hover {
+    background: var(--bg-color);
+    opacity: .8;
+
 }
